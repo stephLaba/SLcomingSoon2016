@@ -10,18 +10,9 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 $display: 'montserrat';
 $copy: 'raleway';
+$icon: 'fontAwesome';
 $white: #ffffff;
 $black: #000000;
-
-
-body{
-	background: $black;
-	color: $white;
-	font-size: 62.5%;
-	padding: 20px;
-
-
-}
 
 @mixin transition($args) {
   -webkit-transition: $args;
@@ -29,6 +20,20 @@ body{
   -ms-transition: $args;
   -o-transition: $args;
   transition: $args;
+}
+
+
+body{
+	background: $black;
+	color: $white;
+	font-size: 62.5%;
+	padding: 20px;
+}
+
+body,
+html{
+	overflow-y: hidden;
+}
 
 // MAIN STYLES START
 
@@ -64,10 +69,6 @@ p{
 	opacity: 0.8;
 }
 
-a{
-	@include transition(all 0.5s ease);
-}
-
 .logo--container{
 	width: 80%;
 	float: left;
@@ -76,14 +77,16 @@ a{
 .menu--trigger{
 	float: left;
 	width: 20%;
-	padding: 20px;
+	font-family: $copy;
+
 
 	p span{
 		float: right;
 		font-size: 50px;
 		position: relative;
 		top: -20px;
-		padding: 20px
+		font-size: 3.0em;
+		font-weight: 100;
 	}
 }
 
@@ -100,13 +103,26 @@ a{
 	}
 
 	p{
-		font-weight: 200;
+		font-weight: 100;
 		text-align: center;
 		font-size: 12px;
 		letter-spacing: 13.1px;
 		padding-left: 6px;
 		opacity: 0.4;
 		text-transform: uppercase;
+		-webkit-animation: letterSpace 5s linear; /* Safari 4+ */
+		 -moz-animation:    letterSpace 5s linear; /* Fx 5+ */
+		 -o-animation:      letterSpace 5s linear; /* Opera 12+ */
+		 animation:         letterSpace 5s linear;
+
+		@keyframes letterSpace {
+		  0% {
+		    letter-spacing: 5px;
+		  }
+		  100% {
+		    letter-spacing: 13.1px;
+		  }
+		}
 	}
 }
 
@@ -128,16 +144,24 @@ a{
 	background-image: url(../i/mount-white.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center 200px;
+	background-position: center 300px; 
+	padding: 20px;
+	overflow: hidden;
+	@include transition(all 0.5s ease);
 
 	.header{
-		padding: 20px
 		.logo--container{
 			width: 80%;
 			float: left;
 
 			h1{
 				border: 4px solid $black;
+				@include transition(all 0.5s ease);
+
+				&:hover{
+					background-color: $black;
+					color: $white;
+				}
 			}
 		}
 
@@ -152,37 +176,61 @@ a{
 	}
 
 	.content--main{
-		padding-top: 100px;
+		padding-top: 165px;
 		a{
 			text-align: center;
 			display: block;
 			text-decoration: none;
-			letter-spacing: 5px;
+			letter-spacing: 10px;
 			font-size: 1.3em;
 			text-transform: uppercase;
 			color: $black;
 			font-weight: 100;
+			margin-top: 10px;
+			@include transition(all 0.5s ease);
+
+			&:hover{
+				opacity: 0.7;
+			}
 		}
 
 		h3{
-			margin-top: 40px;
-			font-family: $display;
-			font-size: 20px;
-			letter-spacing: 5px;
-			font-weight: 800;
 			text-transform: uppercase;
+			letter-spacing: 5px;
 			text-align: center;
+			font-size: 3.0em;
+			letter-spacing: 10px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			margin-top: 40px;
 		}
 
 		.social-media--container{
 			width: 30%;
 			margin: 0 auto;
+			padding: 20px 0;
 
 			a{
 				display: inline-block;
 				float: left;
 				width: 33.33%;
 				text-align: center;
+				font-family: $icon;
+				font-size: 1.8em;
+				opacity: 0.8;
+				@include transition(all 0.5s ease);
+
+				&:hover{
+					opacity: 0.7;
+				}
+			}
+
+			.fa-instagram{
+				text-align: right;
+			}
+
+			.fa-twitter{
+				text-align: left;
 			}
 		}
 	}
