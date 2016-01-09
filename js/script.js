@@ -1,18 +1,25 @@
 
 
 
-$(document).on('ready', function() {  
-  var winHeight = $(window).height(), 
-      docHeight = $(document).height(),
-      progressBar = $('progress'),
-      max, value;
+$(document).on('ready', function() {
 
-  /* Set the max scrollable area */
-  max = docHeight - winHeight;
-  progressBar.attr('max', max);
 
-  $(document).on('scroll', function(){
-     value = $(window).scrollTop();
-     progressBar.attr('value', value);
-  });
+// ACTIVATES MENU
+  function menuTrigger() {
+
+    var menuTrigger = $('.menu--trigger p span'); 
+    var menuBox = $('.menu-overlay--container')
+ 
+    $(menuTrigger).on('click',function (){
+        if($(menuBox).hasClass('hide')) {
+      $(menuBox).removeClass('hide').addClass('show');
+        }else{
+      $(menuBox).removeClass('show').addClass('hide');
+      }
+    });
+  }
+
+
+// call functions
+  menuTrigger();
 });
