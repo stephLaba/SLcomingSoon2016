@@ -27,7 +27,6 @@ body{
 	background: $black;
 	color: $white;
 	font-size: 62.5%;
-	padding: 20px;
 }
 
 body,
@@ -72,12 +71,14 @@ p{
 .logo--container{
 	width: 80%;
 	float: left;
+	padding: 20px;
 }
 
 .menu--trigger{
 	float: left;
 	width: 20%;
 	font-family: $copy;
+	padding: 20px;
 
 
 	p span{
@@ -117,7 +118,7 @@ p{
 
 		@keyframes letterSpace {
 		  0% {
-		    letter-spacing: 5px;
+		    letter-spacing: 10px;
 		  }
 		  100% {
 		    letter-spacing: 13.1px;
@@ -185,12 +186,12 @@ p{
 			font-size: 1.3em;
 			text-transform: uppercase;
 			color: $black;
-			font-weight: 100;
 			margin-top: 10px;
+			opacity: 0.6;
 			@include transition(all 0.5s ease);
 
 			&:hover{
-				opacity: 0.7;
+				opacity: 0.9;
 			}
 		}
 
@@ -248,3 +249,64 @@ p{
 .show{
 	display: block;
 }
+
+
+.glitch{
+  color:white;
+  font-size:100px;
+  position:relative;
+  width:400px;
+  margin:0 auto;
+    background:black;
+ text-transform: uppercase;
+	letter-spacing: 5px;
+	text-align: center;
+	font-size: 1.0em;
+	letter-spacing: 10px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	margin-top: 200px;
+}
+@-webkit-keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  -webkit-animation:noise-anim 7s infinite linear alternate-reverse;
+}
+
+@-webkit-keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 #0899F3; 
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  -webkit-animation:noise-anim-2 7s infinite linear alternate-reverse;
+  animation:noise-anim-2 7s infinite linear alternate-reverse;
+}
+
