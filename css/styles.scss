@@ -59,22 +59,22 @@ h2{
 	letter-spacing: 5px;
 	text-align: center;
 	font-size: 3.0em;
-	letter-spacing: 13.1px;
+	letter-spacing: 15.1px;
 	padding-bottom: 0;
 	margin-bottom: 0;
 	margin-top: 200px;
 	opacity: 1;
-	-webkit-animation: letterSpace 5s linear; /* Safari 4+ */
-	 -moz-animation:    letterSpace 5s linear; /* Fx 5+ */
-	 -o-animation:      letterSpace 5s linear; /* Opera 12+ */
-	 animation:         letterSpace 5s linear;
+	-webkit-animation: letterSpace 3s linear; 
+	 -moz-animation:    letterSpace 3s linear;
+	 -o-animation:      letterSpace 3s linear; 
+	 animation:         letterSpace 3s linear;
 
 	@keyframes letterSpace {
 	  0% {
 	    letter-spacing: 10px;
 	  }
 	  100% {
-	    letter-spacing: 13.1px;
+	    letter-spacing: 15.1px;
 	  }
 	}
 }
@@ -138,21 +138,17 @@ p{
 .content--main{
 	clear: both;
 	z-index: 4; 
-	
 	.inner{
 		height: 100vh;
 		background-image: url(../i/mount-black.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: bottom 300px;
-
 	}
 
 	p{
 		font-weight: 100;
 		text-align: center;
-		letter-spacing: 15.1px;
-		opacity: 0.4;
 		text-transform: uppercase;
 	}
 }
@@ -164,7 +160,7 @@ p{
 		   ========================================================================== */
 
 
-.menu-overlay--container{
+.menu-overlay--container {
 	background: $white;
 	color: $black;
 	position: absolute;
@@ -182,11 +178,11 @@ p{
 	display: block;
 
 	.header{
-		.logo--container{
+		.logo--container{ 
 			width: 80%;
 			float: left;
 
-			h1{
+			h1 {
 				border: 4px solid $black;
 				@include transition(all 0.5s ease);
 
@@ -197,19 +193,19 @@ p{
 			}
 		}
 
-		.menu--trigger02{
+		.menu--trigger02 {
 			float: right;
 			width: 20%;
 
-			p span{
+			p span {
 				float: right;
 			}
 		}
 	}
 
-	.content--main{
-		padding-top: 165px;
-		a{
+	.content--main {
+		padding-top: 200px;
+		a {
 			text-align: center;
 			display: block;
 			text-decoration: none;
@@ -226,7 +222,7 @@ p{
 			}
 		}
 
-		h3{
+		h3 {
 			text-transform: uppercase;
 			letter-spacing: 5px;
 			text-align: center;
@@ -237,12 +233,12 @@ p{
 			margin-top: 40px;
 		}
 
-		.social-media--container{
+		.social-media--container {
 			width: 30%;
 			margin: 0 auto;
 			padding: 20px 0;
 
-			a{
+			a {
 				display: inline-block;
 				float: left;
 				width: 33.33%;
@@ -252,16 +248,16 @@ p{
 				opacity: 0.8;
 				@include transition(all 0.5s ease);
 
-				&:hover{
+				&:hover {
 					opacity: 0.7;
 				}
 			}
 
-			.fa-instagram{
+			.fa-instagram {
 				text-align: right;
 			}
 
-			.fa-twitter{
+			.fa-twitter {
 				text-align: left;
 			}
 		}
@@ -273,28 +269,28 @@ p{
 // HELPER CLASSES
 
 
-.hide{
+.hide {
 	opacity: 0;
 }
 
-.show{
+.show {
 	opacity: 1;
 }
 
-.transparent{
+.transparent {
 	opacity: 0;
 }
 
-.menu-overlay--container.show{
+.menu-overlay--container.show {
 	opacity: 1;
 	z-index: 5;
 }
 
-.menu-line2.transparent{
+.menu-line2.transparent {
 	opacity: 0;
 }
 
-.menu-line1.rotate{
+.menu-line1.rotate {
 	-webkit-transform: rotate(135deg);
 	-moz-transform: rotate(135deg);
 	-o-transform: rotate(135deg);
@@ -303,7 +299,7 @@ p{
 
 }
 
-.menu-line3.rotate{
+.menu-line3.rotate {
 	-webkit-transform: rotate(-135deg);
 	-moz-transform: rotate(-135deg);
 	-o-transform: rotate(-135deg);
@@ -311,5 +307,268 @@ p{
 	top:20px;
 	
 }
+
+
+
+.content--main{
+
+	p{
+		margin-left: -17px;
+		.sub-header{
+			padding: 0 5px;
+	
+		}
+		 span {
+		    span {
+		    	padding: 0 7.8px;
+		    	opacity: 0;
+
+		    	&:nth-child(1){ 
+		    	opacity: 0;
+				-webkit-animation: fadeIn 2s linear; 
+				 -moz-animation: fadeIn 2s linear; 
+				 -o-animation: fadeIn 2s linear; 
+				 animation: fadeIn 2s linear;
+				 -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+				    -moz-animation-fill-mode:forwards; /*FF 5+*/
+				    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+				    -ms-animation-fill-mode:forwards; /*IE 10+*/
+				    animation-fill-mode:forwards;
+				     -webkit-animation-delay: 200ms;
+				    animation-delay: 200ms;
+				
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+
+				// END: span1
+
+				&:nth-child(2) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 1200ms;
+				animation-delay: 1200ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span2
+
+				&:nth-child(3) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 800ms;
+				animation-delay: 800ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span3
+
+				&:nth-child(4) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 300ms;
+				animation-delay: 300ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span4
+
+				&:nth-child(5) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 700ms;
+				animation-delay: 700ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span5
+
+				&:nth-child(6) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 600ms;
+				animation-delay: 600ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span6
+
+				&:nth-child(7) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 400ms;
+				animation-delay: 400ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span7
+
+				&:nth-child(8) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 900ms;
+				animation-delay: 900ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span8
+
+				&:nth-child(9) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 700ms;
+				animation-delay: 700ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span9
+
+				&:nth-child(7) {
+				opacity: 0;
+			 	-webkit-animation: fadeIn 2s linear; 
+				-moz-animation: fadeIn 2s linear; 
+				-o-animation: fadeIn 2s linear; 
+				animation: fadeIn 2s linear;
+				-webkit-animation-fill-mode:forwards; 
+				-moz-animation-fill-mode:forwards;
+				-ms-animation-fill-mode:forwards; 
+				animation-fill-mode:forwards;
+				-webkit-animation-delay: 50ms;
+				animation-delay: 50ms;
+
+				@keyframes fadeIn {
+				    from {
+				          opacity:0;
+				      }
+				      to {
+				          opacity:1;
+				      }
+					}	
+				}
+				// END: span10
+			}	
+		}
+	}
+
+}
+
 
 

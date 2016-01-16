@@ -29,7 +29,6 @@ $(document).on('ready', function() {
     });
   }
 
-
 // call functions
   menuTrigger();
 });
