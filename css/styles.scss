@@ -13,13 +13,18 @@ $copy: 'raleway';
 $icon: 'fontAwesome';
 $white: #ffffff;
 $black: #000000;
+$grey: #444444;
+
+// ANIMATION
+$timing: 2s;
+$style: linear;
 
 @mixin transition($args) {
+  transition: $args;
   -webkit-transition: $args;
   -moz-transition: $args;
   -ms-transition: $args;
   -o-transition: $args;
-  transition: $args;
 }
 
 
@@ -32,7 +37,7 @@ body{
 
 body,
 html{
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 // MAIN STYLES START
@@ -46,7 +51,9 @@ h1{
 	display: inline-block;
 	padding: 13px;
 	font-family: $display;
-	@include transition(all 0.5s ease);
+	position: absolute;
+	z-index: 200;
+	@include transition(all 0.5s ease-in-out);
 
 	&:hover{
 		background: $white;
@@ -58,23 +65,27 @@ h2{
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	text-align: center;
-	font-size: 3.0em;
-	letter-spacing: 15.1px;
+	font-size: 3.1em;
+	letter-spacing: 14.1px;
 	padding-bottom: 0;
 	margin-bottom: 0;
-	margin-top: 200px;
 	opacity: 1;
-	-webkit-animation: letterSpace 3s linear; 
-	 -moz-animation:    letterSpace 3s linear;
-	 -o-animation:      letterSpace 3s linear; 
-	 animation:         letterSpace 3s linear;
+	margin-top: 160px;
+	padding-top: 50px;
+	animation: letterSpace 5s linear;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	   -webkit-perspective: 1000;
+	   -webkit-transform: translate3d(0,0,0);
+	   /* or */
+	   -webkit-transform: translateZ(0);
 
 	@keyframes letterSpace {
 	  0% {
-	    letter-spacing: 10px;
+	    letter-spacing: 4px;
 	  }
 	  100% {
-	    letter-spacing: 15.1px;
+	    letter-spacing: 14.1px;
 	  }
 	}
 }
@@ -110,14 +121,8 @@ p{
 		display: block;
 		position: absolute;
 		right: 20px;
-		-webkit-transform: rotate(0deg);
-		 -moz-transform: rotate(0deg);
-		 -o-transform: rotate(0deg);
 		 transform: rotate(0deg);
-		 -webkit-transition: .25s ease-in-out;
-		 -moz-transition: .25s ease-in-out;
-		 -o-transition: .25s ease-in-out;
-		 transition: .25s ease-in-out;
+		 @include transition(all 0.25s ease-in-out);
 		 opacity: 1;
 	}
 
@@ -140,10 +145,6 @@ p{
 	z-index: 4; 
 	.inner{
 		height: 100vh;
-		background-image: url(../i/mount-black.png);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: bottom 300px;
 	}
 
 	p{
@@ -167,13 +168,9 @@ p{
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
-	background-image: url(../i/mount-white.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center 300px; 
+	height: 100vh; 
 	overflow: hidden;
-	@include transition(all 0.5s ease);
+	@include transition(all 0.5s ease-in-out);
 	opacity: 0;
 	display: block;
 
@@ -184,7 +181,7 @@ p{
 
 			h1 {
 				border: 4px solid $black;
-				@include transition(all 0.5s ease);
+				@include transition(all 0.5s ease-in-out);
 
 				&:hover{
 					background-color: $black;
@@ -204,7 +201,7 @@ p{
 	}
 
 	.content--main {
-		padding-top: 200px;
+		padding-top: 350px;
 		a {
 			text-align: center;
 			display: block;
@@ -215,7 +212,7 @@ p{
 			color: $black;
 			margin-top: 10px;
 			opacity: 0.6;
-			@include transition(all 0.5s ease);
+			@include transition(all 0.5s ease-in-out);
 
 			&:hover{
 				opacity: 0.9;
@@ -246,7 +243,7 @@ p{
 				font-family: $icon;
 				font-size: 1.8em;
 				opacity: 0.8;
-				@include transition(all 0.5s ease);
+				@include transition(all 0.5s ease-in-out);
 
 				&:hover {
 					opacity: 0.7;
@@ -266,8 +263,17 @@ p{
 
 
 
-// HELPER CLASSES
+// HELPER CLASSES 
 
+.invert{
+	color: $black;
+	border: 4px solid black;
+
+	&:hover{
+		background: $black;
+		color: $white;
+	}
+}
 
 .hide {
 	opacity: 0;
@@ -291,32 +297,36 @@ p{
 }
 
 .menu-line1.rotate {
-	-webkit-transform: rotate(135deg);
-	-moz-transform: rotate(135deg);
-	-o-transform: rotate(135deg);
 	transform: rotate(135deg);
 	top: 20px;
 
 }
 
 .menu-line3.rotate {
-	-webkit-transform: rotate(-135deg);
-	-moz-transform: rotate(-135deg);
-	-o-transform: rotate(-135deg);
 	transform: rotate(-135deg);
 	top:20px;
-	
 }
 
+// ANIMATION KEYFRAMES
+
+
+#mov{
+	img{
+		max-width: 100%;
+		position: fixed;
+		    bottom: -20%;
+	}
+}
 
 
 .content--main{
 
 	p{
-		margin-left: -17px;
+		margin-left: -6px;
+		letter-spacing: 6.8px;
 		font-size: 13px;
-		color: #444444;
-		font-weight: 700;
+		color: $grey;
+		font-weight: 800;
 
 		.sub-header{
 			padding: 0 5px;
@@ -324,22 +334,13 @@ p{
 		}
 		 span {
 		    span {
-		    	padding: 0 7.7px;
 		    	opacity: 0;
 
 		    	&:nth-child(1){ 
 		    	opacity: 0;
-				-webkit-animation: fadeIn 2s linear; 
-				 -moz-animation: fadeIn 2s linear; 
-				 -o-animation: fadeIn 2s linear; 
-				 animation: fadeIn 2s linear;
-				 -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
-				    -moz-animation-fill-mode:forwards; /*FF 5+*/
-				    -o-animation-fill-mode:forwards; /*Not implemented yet*/
-				    -ms-animation-fill-mode:forwards; /*IE 10+*/
-				    animation-fill-mode:forwards;
-				     -webkit-animation-delay: 200ms;
-				    animation-delay: 200ms;
+				animation: fadeIn $timing $style;
+				animation-fill-mode:forwards;
+				animation-delay: 200ms;
 				
 				@keyframes fadeIn {
 				    from {
@@ -354,16 +355,9 @@ p{
 				// END: span1
 
 				&:nth-child(2) {
-				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+				opacity: 0; 
+				animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 1200ms;
 				animation-delay: 1200ms;
 
 				@keyframes fadeIn {
@@ -379,15 +373,8 @@ p{
 
 				&:nth-child(3) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+				animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 800ms;
 				animation-delay: 800ms;
 
 				@keyframes fadeIn {
@@ -403,15 +390,8 @@ p{
 
 				&:nth-child(4) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+				animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 300ms;
 				animation-delay: 300ms;
 
 				@keyframes fadeIn {
@@ -427,15 +407,8 @@ p{
 
 				&:nth-child(5) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+				animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 700ms;
 				animation-delay: 700ms;
 
 				@keyframes fadeIn {
@@ -451,15 +424,8 @@ p{
 
 				&:nth-child(6) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+			 	animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 600ms;
 				animation-delay: 600ms;
 
 				@keyframes fadeIn {
@@ -475,15 +441,8 @@ p{
 
 				&:nth-child(7) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+			 	animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 400ms;
 				animation-delay: 400ms;
 
 				@keyframes fadeIn {
@@ -499,15 +458,8 @@ p{
 
 				&:nth-child(8) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+			 	animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 900ms;
 				animation-delay: 900ms;
 
 				@keyframes fadeIn {
@@ -523,15 +475,8 @@ p{
 
 				&:nth-child(9) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+			 	animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 700ms;
 				animation-delay: 700ms;
 
 				@keyframes fadeIn {
@@ -547,15 +492,8 @@ p{
 
 				&:nth-child(7) {
 				opacity: 0;
-			 	-webkit-animation: fadeIn 2s linear; 
-				-moz-animation: fadeIn 2s linear; 
-				-o-animation: fadeIn 2s linear; 
-				animation: fadeIn 2s linear;
-				-webkit-animation-fill-mode:forwards; 
-				-moz-animation-fill-mode:forwards;
-				-ms-animation-fill-mode:forwards; 
+				animation: fadeIn $timing $style;
 				animation-fill-mode:forwards;
-				-webkit-animation-delay: 50ms;
 				animation-delay: 50ms;
 
 				@keyframes fadeIn {
