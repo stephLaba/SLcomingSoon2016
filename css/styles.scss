@@ -14,6 +14,7 @@
 	$white: #ffffff;
 	$black: #000000;
 	$grey: #444444;
+	$darkgrey: #333333;
 
 	// ANIMATION
 	$timing: 2s;
@@ -100,6 +101,7 @@
 		opacity: 0.8;
 		@include transition(all 0.5s ease-in-out);
 	}
+
 
 	.logo--container{
 		width: 80%;
@@ -216,13 +218,12 @@
 				letter-spacing: 10px;
 				font-size: 1.3em;
 				text-transform: uppercase;
-				color: $black;
+				color: $darkgrey;
 				margin-top: 10px;
-				opacity: 0.6;
 				@include transition(all 0.5s ease-in-out);
 
 				&:hover{
-					opacity: 0.9;
+					opacity: 0.8;
 				}
 			}
 
@@ -249,7 +250,7 @@
 					text-align: center;
 					font-family: $icon;
 					font-size: 1.8em;
-					opacity: 0.8;
+					color: $darkgrey;
 					@include transition(all 0.5s ease-in-out);
 
 					&:hover {
@@ -283,7 +284,7 @@
 	}
 
 
-	p.hide {
+	.content--main p.hide {
 		opacity: 0;
 	}
 
@@ -339,6 +340,8 @@
 			font-weight: 200;
 			font-size: 2.14rem;
 			letter-spacing: 11.4px;
+			@include transition(all 0.5s ease-in-out);
+			opacity: 1;
 
 			.sub-header{
 				padding: 0 5px;
@@ -558,13 +561,10 @@
 	  -webkit-backface-visibility: hidden;
 	}
 
-	.bglayer{
-		background: url(../i/mount_BG_drk.png);
+	.bglayer,
+	.bglayer02{
 		z-index: 1;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		background-position: center center;
+		background-position: center;
 		background-repeat: no-repeat;
 		-webkit-transform: translate3d(0,0,0);
 		-moz-transform: translate3d(0,0,0);
@@ -572,35 +572,64 @@
 		-webkit-transform-style: preserve-3d;
 	  	-moz-transform-style: preserve-3d;
 	 	transform-style: preserve-3d;
-	    min-height: 420px;
-	    background-position: 0 299px;
-	    opacity: 0.5;
+	    opacity: 0.7;
 	    backface-visibility: hidden;
 	    -webkit-backface-visibility: hidden;
-	    
-
+	   min-height: 500px;
+	   background-position: 50% 480px;
+	  
 
 	}
 
-	.frontlayer{
-		background: url(../i/mount_FG_drk.png);
+	.bglayer {
+		background: url(../i/DK_BG.svg);
+		background-position-x: center;
+    	background-repeat: no-repeat;
+    	background-size: contain;
+    	background-position: 50% 480px;
+
+	}
+
+	.bglayer02 {
+		background: url(../i/LT_BG.svg);
+		background-position-x: center;
+   		background-repeat: no-repeat;
+   		background-size: contain;
+   		background-position: 50% 480px;
+    
+
+	}
+
+	.frontlayer,
+	.frontlayer02{
 		z-index: 2;
-		-moz-background-size: cover;
-	  	-o-background-size: cover;
-	  	background-size: cover;
-	  	background-position: center center;
+	  	background-position: center;
 	  	background-repeat: no-repeat;
-	  		-webkit-transform: translate3d(0,0,0);
+	  	-webkit-transform: translate3d(0,0,0);
 	  	-moz-transform: translate3d(0,0,0);
 	  	transform: translate3d(0,0,0);
 	  	-webkit-transform-style: preserve-3d;
 	  	-moz-transform-style: preserve-3d;
 	  	transform-style: preserve-3d;
 	  	min-height: 400px;
-	    background-position: 0 -100px;
 	    backface-visibility: hidden;
 	   -webkit-backface-visibility: hidden;
+	
 
+	}
+
+	.frontlayer {
+		background: url(../i/DK_FG.svg);
+		background-position-x: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	.frontlayer02 {
+		background: url(../i/LT_FG.svg);
+		background-position-x: center;
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 
@@ -627,12 +656,9 @@
 	  	}
 	}
 
-
 	.overlay2{
 		top: 40%;
 	}
-
-
 
 	.layer{
 		img{

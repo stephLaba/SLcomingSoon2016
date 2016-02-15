@@ -18,10 +18,6 @@ $(document).on('ready', function() {
     
   }
 
-
-
-
-
 // ACTIVATES MENU
   function menuTrigger() {
 
@@ -31,7 +27,7 @@ $(document).on('ready', function() {
     var span2 = $('.menu-line2');
     var span3 = $('.menu-line3');
     var logo = $('h1');
-    var para = $('p.opacity');
+    var para = $('p.show');
  
     $(menuTrigger).on('click',function (){
         if($(menuBox).hasClass('hide')) {
@@ -48,7 +44,6 @@ $(document).on('ready', function() {
         $(span3).removeClass('rotate');
         $(span2).removeClass('transparent');
         $(logo).removeClass('invert');
-        $(para).removeClass('hide');
         $(para).removeClass('hide').removeClass('show');
       }
     });
