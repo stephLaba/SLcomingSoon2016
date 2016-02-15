@@ -28,6 +28,7 @@ $(document).on('ready', function() {
     var span3 = $('.menu-line3');
     var logo = $('h1');
     var para = $('p.show');
+    var body = $('body');
  
     $(menuTrigger).on('click',function (){
         if($(menuBox).hasClass('hide')) {
@@ -37,6 +38,8 @@ $(document).on('ready', function() {
       $(span2).addClass('transparent');
       $(logo).addClass('invert');
       $(para).removeClass('show').addClass('hide');
+      $(body).addClass('light');
+
 
         }else{
         $(menuBox).removeClass('show').addClass('hide');
@@ -45,6 +48,7 @@ $(document).on('ready', function() {
         $(span2).removeClass('transparent');
         $(logo).removeClass('invert');
         $(para).removeClass('hide').removeClass('show');
+        $(body).removeClass('light');
       }
     });
   }
@@ -59,7 +63,7 @@ $(document).on('ready', function() {
        textIndent: 0
    }, {
        step: function(now, fx) {
-           overlay.mousemove(function(e) {
+            overlay.bind("mousemove touchmove", function(e){
                var amountMovedX = (e.pageX * -1 / 6);
                var amountMovedY = (e.pageY * -1 / 25);
                frontlayer.css({
@@ -80,7 +84,7 @@ $(document).on('ready', function() {
        textIndent: 0
    }, {
        step: function(now, fx) {
-           overlay.mousemove(function(e) {
+           overlay.bind("mousemove touchmove", function(e){
                var amountMovedX = (e.pageX * -1 / 12);
                var amountMovedY = (e.pageY * -1 / 25);
                bglayer.css({
