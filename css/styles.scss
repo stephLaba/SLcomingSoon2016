@@ -603,8 +603,6 @@
     	background-repeat: no-repeat;
     	background-size: contain;
     	background-position: 50% 480px;
-
-
 	}
 
 	.bglayer02 {
@@ -613,7 +611,6 @@
    		background-repeat: no-repeat;
    		background-size: contain;
    		background-position: 50% 480px;
-    
 
 	}
 
@@ -711,11 +708,15 @@
 	 	body {
 	 		overflow-y: hidden; 
 	 	}
-			.menu--trigger span {
+			.menu--trigger {
+				right: 0;
+
+				span{
 				border-bottom: 4px solid white;
 
-				&.rotate {
-					border-bottom: 4px solid black;
+					&.rotate {
+						border-bottom: 4px solid black;
+					}
 				}
 			}
 
@@ -740,8 +741,20 @@
 				}
 			}
 
+			.overlay {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.overlay2 {
+				top: 0;
+				flex-direction: column;
+			}
+
 			h2 {
-				margin-top: 350px;
+				padding-top: 0;
+				margin-top: 0;
 				font-size: 2.5rem;
 			}
 
@@ -780,10 +793,6 @@
 
 	 @media screen and (max-width:600px) { 
 
-	 	h2 {
-	 		margin-top: 200px;
-	 	}
-
 	 	 .cave1 {
 		     	transform: rotate(180deg);
 		     	top: -100px;
@@ -800,9 +809,10 @@
 					letter-spacing: 7px;
 		   		}
 
-				.social-media--container {
-		   		width: 65%;
+		   		.social-media--container {
+		   			width: 100%;
 		   		}
+
 		   	}
 
 		}
