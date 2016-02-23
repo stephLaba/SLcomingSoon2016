@@ -228,6 +228,7 @@
 				text-transform: uppercase;
 				color: $darkgrey;
 				margin-top: 10px;
+				font-weight: 800;
 				@include transition(all 0.5s ease-in-out);
 
 				&:hover,
@@ -354,11 +355,11 @@
 			letter-spacing: 6.8px;
 			font-size: 13px;
 			color: $grey;
-			font-weight: 200;
+			font-weight: 500;
 			font-size: 2.14rem;
 			letter-spacing: 11.4px;
 			@include transition(all 0.5s ease-in-out);
-			opacity: 1;
+	
 
 			.sub-header{
 				padding: 0 5px;
@@ -379,7 +380,7 @@
 					          opacity:0;
 					      }
 					      to {
-					          opacity:1;
+					          opacity: 0.9;
 					      }
 						}	
 					}
@@ -552,6 +553,9 @@
 	  text-align: center;
 	  -webkit-backface-visibility: hidden;
 	  -webkit-transform: translate3d(0, 0, 0);
+	  height: 100vh;
+	  position: relative;
+
 	}
 
 	#landing-cover{
@@ -561,6 +565,9 @@
 	  -webkit-transition: opacity .8s;
 	  transition: opacity .8s;
 	  -webkit-backface-visibility: hidden;
+	  position: absolute;
+	  bottom: -10px;
+	  width: 100%;
 	}
 
 	.work-hero #landing-cover {
@@ -576,6 +583,7 @@
 	  left: 0px;
 	  top: 0px;
 	  -webkit-backface-visibility: hidden;
+
 	}
 
 	.bglayer,
@@ -601,7 +609,7 @@
 		background: url(../i/DK_BG.svg);
 		background-position-x: center;
     	background-repeat: no-repeat;
-    	background-size: contain;
+    	background-size: cover;
     	background-position: 50% 480px;
 	}
 
@@ -609,8 +617,9 @@
 		background: url(../i/LT_BG.svg);
 		background-position-x: center;
    		background-repeat: no-repeat;
-   		background-size: contain;
+   		background-size: cover;
    		background-position: 50% 480px;
+   		opacity: 0.7;
 
 	}
 
@@ -636,14 +645,14 @@
 	.frontlayer {
 		background: url(../i/DK_FG.svg);
 		background-position-x: center;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 
 	.frontlayer02 {
 		background: url(../i/LT_FG.svg);
 		background-position-x: center;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 
@@ -697,8 +706,12 @@
 		                   MQS
 		   ========================================================================== */
 
-
-
+	 @media screen and (max-height:800px) { 
+	 	.frontlayer,
+	 	.frontlayer02 {
+	 		min-height: 250px; 
+	 	}
+	 }
 
 		   // MOBILE
 

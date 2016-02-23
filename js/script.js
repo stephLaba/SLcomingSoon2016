@@ -3,7 +3,6 @@
 
 $(document).on('ready', function() {
 
-
   function moveInit() {
 
     var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
