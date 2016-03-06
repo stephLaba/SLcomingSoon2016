@@ -706,37 +706,6 @@
 	 	.frontlayer02 {
 	 		min-height: 250px; 
 	 	}
-
- 	// 		h2{
-		// 	font-size: 3.0rem;
-		//     letter-spacing: 18.1px;
-		//     margin-left: -8px;
-		//     padding-bottom: 0;
-		//     margin-top: 210px;
-		//     animation: letterSpace 5s linear;
-
-
-		// 	@keyframes letterSpace {
-		// 	  0% {
-		// 	    letter-spacing: 16.1px;
-		// 	    opacity: 0;
-		// 	  }
-		// 	50%{
-		// 		opacity: 1;
-		// 	}
-
-		// 	  100% {
-		// 	    letter-spacing: 18.1px;
-		// 	  }
-		// 	}
-		// }
-
-		// .content--main p {
-		// 	letter-spacing: 10.4px;
-		// 	margin-left: -12px;
-		// 	font-weight: 500;
-		// 	font-size: 1.14rem;
-		// }
 	 }
 
 		   // MOBILE
@@ -787,8 +756,9 @@
 			}
 
 			.overlay2 {
-				top: 0;
-				flex-direction: column;
+				top: 40%;
+				flex-direction: none;
+				display: block;
 			}
 
 			h2 {
